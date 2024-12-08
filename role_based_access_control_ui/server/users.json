@@ -1,22 +1,22 @@
 [
   {
     "id": 1,
-    "name": "John Doe",
-    "email": "john.doe@example.com",
+    "name": "Varun chandra",
+    "email": "varun@example.com",
     "role": "Admin",
     "status": "Active"
   },
   {
     "id": 2,
-    "name": "Jane Smith",
-    "email": "jane.smith@example.com",
+    "name": "Vijay",
+    "email": "vijay@example.com",
     "role": "Editor",
     "status": "Inactive"
   },
   {
     "id": 3,
-    "name": "K. Varun chandra",
-    "email": "varunchandra29@gmail.com",
+    "name": "Amulya",
+    "email": "amulya@gmail.com",
     "role": "Editor",
     "status": "Active"
   }
