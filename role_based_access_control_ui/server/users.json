@@ -19,5 +19,12 @@
     "email": "amulya@gmail.com",
     "role": "Editor",
     "status": "Active"
+  },
+  {
+    "id": 4,
+    "name": "Jishnu",
+    "email": "jishnu2@gmail.com",
+    "role": "Editor",
+    "status": "Active"
   }
 ]

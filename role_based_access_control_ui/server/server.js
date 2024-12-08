@@ -2,22 +2,13 @@ import express from "express";
 import fs from "fs";
 import path from "path";
 import bodyParser from "body-parser";
-import cors from "cors";
 
 const app = express();
 const PORT = 5000;
 
-// Enable CORS for your Netlify domain
-const corsOptions = {
-  origin: "https://rolebasedcontrolui.netlify.app", // Allow only this domain
-  methods: "GET, POST, PUT, DELETE",
-  allowedHeaders: "Content-Type",
-};
-
-app.use(cors(corsOptions)); // Apply the CORS settings
+app.use(express.json());
 
 // Middleware
-app.use(express.json());
 app.use(bodyParser.json());
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -26,16 +17,17 @@ app.use((req, res, next) => {
   next();
 });
 
-// Use a temporary writable directory (like /tmp for platforms like Render)
-const tmpDir = "/tmp";
-const userFilePath = path.join(tmpDir, "users.json");
-const roleFilePath = path.join(tmpDir, "roles.json");
-const permissionFilePath = path.join(tmpDir, "permissions.json");
+// File paths
+const userFilePath = path.normalize(path.join("users.json"));
+const roleFilePath = path.normalize(path.join("roles.json"));
+const permissionFilePath = path.normalize(path.join("permission.json"));
 
-// Utility functions to read and write files
 const readFile = (filePath) => {
   try {
-    return JSON.parse(fs.readFileSync(filePath, "utf8"));
+    if (fs.existsSync(filePath)) {
+      return JSON.parse(fs.readFileSync(filePath, "utf8"));
+    }
+    return [];
   } catch (err) {
     console.error(`Error reading file ${filePath}: `, err);
     return [];
@@ -49,16 +41,6 @@ const writeFile = (filePath, data) => {
     console.error(`Error writing file ${filePath}: `, err);
   }
 };
-
-// Initialize files in /tmp if not present
-const initializeFiles = () => {
-  [userFilePath, roleFilePath, permissionFilePath].forEach((filePath) => {
-    if (!fs.existsSync(filePath)) {
-      fs.writeFileSync(filePath, JSON.stringify([], null, 2), "utf8");
-    }
-  });
-};
-initializeFiles();
 
 //=================================== User Management APIs =====================================
 app.get("/users", (req, res) => {
@@ -160,3 +142,5 @@ app.delete("/permissions/:id", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
+

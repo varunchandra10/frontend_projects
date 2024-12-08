@@ -22,6 +22,7 @@ const UserManagement = () => {
   const loadUsers = async () => {
     try {
       const fetchedUsers = await fetchUsers();
+      // console.log(fetchedUsers); 
       setUsers(fetchedUsers);
       setFilteredUsers(fetchedUsers);
     } catch (error) {
