@@ -47,7 +47,7 @@
    Open the browser and go to http://localhost:3000 to view the application.
 
 => Install dependencies(server side)
-   cd role-user-permission-management
+cd role-user-permission-management
    mkdir server
    cd server
    npm init
