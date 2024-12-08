@@ -2,4 +2,4 @@
 -I basically use **Reactjs** for frontend and **NETLIFY** to host the frontend layer.
 Technology stack mostly used in these 
 -ReactJS,  NextJS, ExpressJS(for mock data manipulations), AntD(for design of pages).
-### Role based Ui demo-link : https://rolebasedcontrolui.netlify.app/ ###
+### Role based Ui demo-link : https://rbui.netlify.app/ ###
