@@ -2,9 +2,19 @@ import express from "express";
 import fs from "fs";
 import path from "path";
 import bodyParser from "body-parser";
+import cors from "cors";
 
 const app = express();
 const PORT = 5000;
+
+// Enable CORS for your Netlify domain
+const corsOptions = {
+  origin: "https://rolebasedcontrolui.netlify.app", // Allow only this domain
+  methods: "GET, POST, PUT, DELETE",
+  allowedHeaders: "Content-Type",
+};
+
+app.use(cors(corsOptions)); // Apply the CORS settings
 
 // Middleware
 app.use(express.json());
