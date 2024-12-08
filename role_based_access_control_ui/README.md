@@ -1,4 +1,4 @@
-Role-Based Access Control (RBAC) UI:- Role, User, and Permission Management System
+**Role-Based Access Control (RBAC) UI:- Role, User, and Permission Management System**
 
 **DEMO-LINK :**
 
@@ -35,7 +35,7 @@ Role-Based Access Control (RBAC) UI:- Role, User, and Permission Management Syst
 
 **Setup**: *Prerequisites*
 => Node.js should installed on your machine.
-=> Clone the repository:
+=> Clone the repository: https://github.com/varunchandra10/frontend_projects/edit/main/role_based_access_control_ui
 => Install dependencies(client side)
    cd role-user-permission-management
    mkdir client
