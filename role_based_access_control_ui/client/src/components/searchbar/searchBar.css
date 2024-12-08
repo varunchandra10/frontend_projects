@@ -1,0 +1,50 @@
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: #2c3e50;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar .ant-input::placeholder {
+  color: rgba(0, 0, 0, 0.622);
+}
+
+.search-bar .ant-select {
+  color: rgba(0, 0, 0, 0.622);
+  border: none;
+  border-radius: 6px;
+  min-width: 150px;
+}
+
+.search-bar .ant-select .ant-select-selector {
+  color: rgba(0, 0, 0, 0.622);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer !important;
+}
+
+.search-bar .ant-select .ant-select-selection-placeholder {
+  color: rgba(0, 0, 0, 0.622);
+}
+
+.search-bar .ant-select .ant-select-arrow {
+  color: rgba(0, 0, 0, 0.622);
+}
+
+.search-bar .ant-select-dropdown-menu-item {
+  color: #ecf0f1;
+}
+
+.search-bar .ant-select-item {
+  padding: 8px 12px;
+}
+
+@media only screen and (max-width: 350px) {
+  .search-bar {
+    display: flex;
+    flex-direction: column;
+  }
+}

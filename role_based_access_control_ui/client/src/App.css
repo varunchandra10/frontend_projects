@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: azure;
+}
+
+.home-page .ant-tabs-nav {
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.home-page .ant-tabs-tab {
+  margin: 0 16px;
+}
+
+.home-page .ant-tabs-ink-bar {
+  background-color: #000;
+  height: 3px;
+}
+
+.home-page .ant-tabs-tab:hover {
+  color: #000;
+}
+
+@media only screen and (max-width: 350px) {
+  .home-page .ant-tabs-nav {
+    margin: 0px !important;
+  }
+}

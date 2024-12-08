@@ -1,0 +1,80 @@
+.management {
+  padding: 20px;
+}
+
+.management-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.ant-btn-primary {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.management .card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.management .card {
+  border: 1px solid #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.259);
+}
+
+.management .card-details p {
+  margin: 0;
+  padding: 3px;
+  font-size: 16px;
+  color: #333;
+}
+
+.management .card-actions {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.management .card-actions button {
+  margin-left: 8px;
+}
+
+.edit_button {
+  background-color: cadetblue;
+  color: white;
+  font-size: 14px;
+}
+
+.delete_button {
+  background-color: #ff6347;
+  color: white;
+  font-size: 14px;
+}
+
+/* Mobile view */
+@media only screen and (max-width: 350px) {
+  .management .card-container {
+    grid-template-columns: 1fr;
+  }
+
+  .management-head {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .management .card-details p {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .management-head {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+}
+
