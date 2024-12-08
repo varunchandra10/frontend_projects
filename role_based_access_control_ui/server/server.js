@@ -6,9 +6,8 @@ import bodyParser from "body-parser";
 const app = express();
 const PORT = 5000;
 
-app.use(express.json());
-
 // Middleware
+app.use(express.json());
 app.use(bodyParser.json());
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -17,11 +16,13 @@ app.use((req, res, next) => {
   next();
 });
 
-// File paths
-const userFilePath = path.normalize(path.join("users.json"));
-const roleFilePath = path.normalize(path.join("roles.json"));
-const permissionFilePath = path.normalize(path.join("permission.json"));
+// Use a temporary writable directory (like /tmp for platforms like Render)
+const tmpDir = "/tmp";
+const userFilePath = path.join(tmpDir, "users.json");
+const roleFilePath = path.join(tmpDir, "roles.json");
+const permissionFilePath = path.join(tmpDir, "permissions.json");
 
+// Utility functions to read and write files
 const readFile = (filePath) => {
   try {
     return JSON.parse(fs.readFileSync(filePath, "utf8"));
@@ -38,6 +39,16 @@ const writeFile = (filePath, data) => {
     console.error(`Error writing file ${filePath}: `, err);
   }
 };
+
+// Initialize files in /tmp if not present
+const initializeFiles = () => {
+  [userFilePath, roleFilePath, permissionFilePath].forEach((filePath) => {
+    if (!fs.existsSync(filePath)) {
+      fs.writeFileSync(filePath, JSON.stringify([], null, 2), "utf8");
+    }
+  });
+};
+initializeFiles();
 
 //=================================== User Management APIs =====================================
 app.get("/users", (req, res) => {
