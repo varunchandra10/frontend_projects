@@ -51,32 +51,32 @@ The system supports adding, editing, and deleting roles and users, along with se
 ### **Frontend Setup**
 
 1. Navigate to the project directory:
-- cd role-user-permission-management
-- mkdir client
-- cd client
+- `cd role-user-permission-management`
+- `mkdir client`
+- `cd client`
 
 
 2. Create a React app and install dependencies:
-- npx create-react-app ./
-- npm install axios react-router-dom antd
+- `npx create-react-app ./`
+- `npm install axios react-router-dom antd`
 
 3. To start the frontend:
-- npm start
+- `npm start`
 - Open your browser and go to `http://localhost:3000` to view the application.
 
 ### **Backend Setup**
 
 1. Navigate to the server folder:
-- cd role-user-permission-management
-- mkdir server
-- cd server
+- `cd role-user-permission-management`
+- `mkdir server`
+- `cd server`
 
 2. Initialize Node.js and install backend dependencies:
-- npm init
-- npm install express path body-parser fs
+- `npm init`
+- `npm install express path body-parser fs`
 
 4. To start the backend server:
-- npm start
+- `npm start`
 - Open your browser and go to `http://localhost:5000` to view the backend server.
 
 ---
@@ -101,3 +101,7 @@ The system supports adding, editing, and deleting roles and users, along with se
 - `PUT /api/permissions/:id` – Update an existing permission
 - `DELETE /api/permissions/:id` – Delete a permission
 
+## **Deployment** ##
+- Frontend : Deployed build folder in **Netlify**
+- Backend(for mock server): Deployed the server files in **Render** through the **Github**
+- And replaced the Server-link in the **api/indexApi.js** folder and then ran command `npm run build` to obtain build folder.
